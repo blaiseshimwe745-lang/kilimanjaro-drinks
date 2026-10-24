@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kilimanjaro Drinks</title>
+<meta name="description" content="Die Getränkekarte der Kilimanjaro Black & White Sound Bar, Harrachgasse 22, Graz.">
+<meta name="theme-color" content="#0b0b0a">
+<meta property="og:title" content="Kilimanjaro – Drinks">
+<meta property="og:image" content="img/hero.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0a; --surface:#141412; --surface-2:#1c1b18; --line:#2a2823;
+  --ink:#f3eee4; --muted:#a49d8f; --gold:#c9a96a; --gold-2:#e2c995; --green:#4caf62;
+  --radius:18px; --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* Hero */
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,10,.25) 0%,rgba(11,11,10,.35) 45%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:28px;width:100%}
+.mark{width:58px;height:auto;color:var(--ink);margin-bottom:14px}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,12vw,76px);line-height:.95;letter-spacing:.02em;margin:8px 0 10px}
+.tagline{color:var(--muted);font-size:14px}
+.tagline b{color:var(--ink);font-weight:600}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(20,20,18,.7);backdrop-filter:blur(6px);color:var(--muted)}
+.pill .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;vertical-align:1px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,11,10,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+nav a.on{color:var(--bg);background:var(--gold)}
+nav a.secret{border-color:var(--gold);color:var(--gold)}
+nav a.secret.on{color:var(--bg)}
+
+/* Sections */
+section{padding:44px 0 8px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
+h2{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1}
+.sec-sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:6px 0 22px;opacity:.5}
+
+/* Feature cards (signature) */
+.feature{display:grid;gap:18px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:left;width:100%;transition:transform .2s ease}
+.card:active{transform:scale(.985)}
+.card .ph{aspect-ratio:4/5;overflow:hidden;background:var(--surface-2)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.feature .card .ph{aspect-ratio:4/3.6}
+.card .body{padding:14px 16px 16px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.name{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.1}
+.price{font-weight:700;color:var(--gold-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.desc{color:var(--muted);font-size:13.5px;margin-top:6px}
+.tag{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(11,11,10,.75);backdrop-filter:blur(6px);color:var(--gold-2);border:1px solid rgba(201,169,106,.4)}
+
+/* Grid (classics) */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid .name{font-size:19px}
+.grid .body{padding:10px 12px 12px}
+.grid .desc{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* List sections */
+.banner{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;margin-bottom:8px;border:1px solid var(--line)}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.list{list-style:none}
+.list li{padding:14px 0;border-bottom:1px solid var(--line)}
+.list li:last-child{border-bottom:0}
+.list .name{font-family:var(--sans);font-size:15.5px;font-weight:600}
+.list .desc{margin-top:2px}
+.mini-tag{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-left:8px}
+.lead{color:var(--muted);font-size:14px;margin:-8px 0 18px}
+
+/* Secret */
+.secret-box{position:relative;border:1px solid rgba(201,169,106,.45);border-radius:calc(var(--radius) + 6px);padding:18px;background:radial-gradient(120% 80% at 50% 0%,rgba(201,169,106,.14),transparent 60%),var(--surface)}
+.secret-box .grid{grid-template-columns:repeat(3,1fr);gap:10px}
+.locked .card .ph img{filter:blur(14px) brightness(.55) saturate(.8);transform:scale(1.15)}
+.locked .card .body .name,.locked .card .body .price{filter:blur(6px)}
+.locked .card .desc{visibility:hidden}
+.lock-ico{position:absolute;top:0;left:0;right:0;aspect-ratio:4/5;display:grid;place-items:center;pointer-events:none}
+.unlocked .lock-ico{display:none}
+.lock-ico svg{width:26px;height:26px;color:var(--gold-2)}
+.secret-box .grid .name{font-size:16px}
+.secret-box .grid .row{flex-direction:column;align-items:flex-start;gap:2px}
+.secret-box .grid .body{padding:10px}
+.secret-box .grid .desc{-webkit-line-clamp:3}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:16px;padding:15px 18px;border-radius:999px;background:var(--gold);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.unlocked .cta.open-unlock{display:none}
+.unlocked-note{display:none;text-align:center;color:var(--green);font-weight:600;font-size:13px;margin-top:14px}
+.unlocked .unlocked-note{display:block}
+
+/* Footer */
+footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:13px}
+footer .ig{display:inline-flex;align-items:center;gap:8px;margin:14px 0 22px;padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600}
+footer p+p{margin-top:4px}
+.legal{margin-top:20px;font-size:11.5px;opacity:.75}
+
+/* Sheet */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-height:92vh;overflow:auto;background:var(--surface);border-radius:24px 24px 0 0;border-top:1px solid var(--line);transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+.open .scrim{opacity:1;pointer-events:auto}
+.sheet.show{transform:none}
+.sheet .grab{width:40px;height:4px;border-radius:4px;background:var(--line);margin:10px auto}
+.sheet .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(11,11,10,.7);display:grid;place-items:center;font-size:20px;z-index:2}
+.sheet-in{max-width:620px;margin:0 auto;padding:0 20px}
+.detail-img{aspect-ratio:4/5;max-height:56vh;width:100%;object-fit:cover;border-radius:16px}
+.detail .name{font-size:32px;margin-top:16px}
+.detail .desc{font-size:15px;margin-top:8px}
+.steps{list-style:none;counter-reset:s;margin:18px 0}
+.steps li{counter-increment:s;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:13px}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:13.5px}
+.code{display:flex;gap:8px;margin-top:14px}
+.code input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:14px 18px;color:var(--ink);font:inherit;font-size:16px;letter-spacing:.18em;text-transform:uppercase}
+.code input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.code .cta{width:auto;margin:0}
+.err{color:#e57373;font-size:13px;min-height:20px;margin-top:8px;text-align:center}
+.small{font-size:11.5px;color:var(--muted);margin-top:12px;text-align:center}
+.sheet h3{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.05;margin-top:6px}
+
+@media (min-width:640px){
+  .feature{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/hero.webp" alt="Bar mit Kilimanjaro-Leuchtschrift">
+  <div class="wrap">
+    <svg class="mark" viewBox="0 0 64 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M1 27 L18 9 L25 15 L34 4 L46 16 L52 11 L63 27"/><path d="M29.5 9.5 L34 4 L38.5 8.5 L36 10 L34 8.5 L31.5 10.5 Z" fill="currentColor" stroke="none"/></svg>
+    <div class="eyebrow">Black &amp; White Sound Bar · Graz</div>
+    <h1>KILIMANJARO</h1>
+    <p class="tagline"><b>Where the vibes peak.</b> Afrobeats, Latin, Dancehall &amp; Drinks aus aller Welt.</p>
+    <div class="meta">
+      <span class="pill"><span class="dot"></span>Mi–Sa · 19–04 Uhr</span>
+      <span class="pill">Harrachgasse 22</span>
+      <span class="pill">18+</span>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Kategorien"><div class="wrap" id="nav"></div></nav>
+
+<main class="wrap" id="menu"></main>
+
+<footer class="wrap">
+  <div class="eyebrow">Teil der Story werden</div>
+  <a class="ig" href="https://www.instagram.com/kilimanjaro_graz/" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    @kilimanjaro_graz
+  </a>
+  <p>Kilimanjaro Black &amp; White Sound Bar</p>
+  <p>Harrachgasse 22, 8010 Graz · +43 650 385 2093</p>
+  <p>Private Events Mo, Di &amp; So: office@kilimanjaro-graz.at</p>
+  <p class="legal">Alle Preise in Euro inkl. MwSt. Kein Ausschank von Alkohol an Personen unter 18 Jahren – bitte Ausweis bereithalten. Allergene auf Anfrage beim Personal. Genieße verantwortungsvoll.</p>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><div class="grab"></div><button class="x" id="close" aria-label="Schließen">×</button><div class="sheet-in" id="sheetBody"></div></div>
+
+<script src="menu.js"></script>
+<script>
+/* SHA-256 des Wochencodes für die Geheimkarte. Ändern mit: python set_code.py NEUERCODE */
+const UNLOCK_HASHES = ["233122e8fa968c9514e82b7378c111ca3bfd77e5040d2a0eb7074c335671ce33"];
+const UNLOCK_HOURS = 12;
+const IG = "https://www.instagram.com/kilimanjaro_graz/";
+
+const M = window.MENU, $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lockSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
+async function sha256(s){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+function isUnlocked(){
+  try { return Date.now() < Number(localStorage.getItem("kili_unlock") || 0); } catch { return false; }
+}
+function card(it, opts = {}){
+  return `<button class="card" data-id="${esc(it.id)}">
+    ${it.img ? `<div class="ph"><img loading="lazy" src="img/${esc(it.img)}.webp" alt="${esc(it.name)}"></div>` : ""}
+    ${it.tag && !opts.noTag ? `<span class="tag">${esc(it.tag)}</span>` : ""}
+    ${opts.locked ? `<div class="lock-ico">${lockSvg}</div>` : ""}
+    <div class="body"><div class="row"><span class="name">${esc(it.name)}</span><span class="price">${esc(it.price)}</span></div>
+    <p class="desc">${esc(it.desc)}</p></div></button>`;
+}
+function render(){
+  const items = {};
+  let nav = "", html = "";
+  for (const c of M.categories){
+    c.items.forEach(i => items[i.id] = i);
+    nav += `<a href="#${c.id}" class="${c.locked ? "secret" : ""}">${c.locked ? "🔒 " : ""}${esc(c.title)}</a>`;
+    let inner;
+    if (c.id === "signature"){
+      inner = `<div class="feature">${c.items.map(i => card(i)).join("")}</div>`;
+    } else if (c.locked){
+      inner = `<div class="secret-box ${isUnlocked() ? "unlocked" : "locked"}" id="secretBox">
+        <p class="lead" style="margin:0 0 16px">Drei Drinks, die nicht auf der normalen Karte stehen – jeder auch alkoholfrei. Folge uns, poste eine Story aus der Bar und schalte sie frei.</p>
+        <div class="grid">${c.items.map(i => card(i, {locked:true, noTag:true})).join("")}</div>
+        <button class="cta open-unlock" id="openUnlock">${lockSvg.replace('<svg','<svg width="18" height="18"')} Geheimkarte freischalten</button>
+        <p class="unlocked-note">✓ Freigeschaltet – zeig diese Seite an der Bar.</p>
+      </div>`;
+    } else if (c.items.some(i => i.img)){
+      inner = `<div class="grid">${c.items.map(i => i.img ? card(i, {noTag:true}) : "").join("")}</div>
+        <ul class="list" style="margin-top:6px">${c.items.filter(i => !i.img).map(listRow).join("")}</ul>`;
+    } else {
+      inner = `${c.img ? `<div class="banner"><img loading="lazy" src="img/${esc(c.img)}.webp" alt="${esc(c.title)}"></div>` : ""}
+        <ul class="list">${c.items.map(listRow).join("")}</ul>`;
+    }
+    html += `<section id="${c.id}"><div class="sec-head"><h2>${esc(c.title)}</h2><span class="sec-sub">${esc(c.subtitle || "")}</span></div><div class="rule"></div>${inner}</section>`;
+  }
+  $("#nav").innerHTML = nav;
+  $("#menu").innerHTML = html;
+  window.ITEMS = items;
+}
+function listRow(i){
+  return `<li><div class="row"><span class="name">${esc(i.name)}${i.tag ? `<span class="mini-tag">${esc(i.tag)}</span>` : ""}</span><span class="price">${esc(i.price)}</span></div><p class="desc">${esc(i.desc)}</p></li>`;
+}
+
+/* Sheet */
+function openSheet(html){
+  $("#sheetBody").innerHTML = html;
+  document.body.classList.add("open");
+  $("#sheet").classList.add("show");
+  $("#sheet").scrollTop = 0;
+}
+function closeSheet(){
+  document.body.classList.remove("open");
+  $("#sheet").classList.remove("show");
+}
+function showDetail(id){
+  const it = ITEMS[id];
+  const inSecret = M.categories.find(c => c.locked)?.items.includes(it);
+  if (inSecret && !isUnlocked()) return showUnlock();
+  openSheet(`<div class="detail">
+    ${it.img ? `<img class="detail-img" src="img/${esc(it.img)}.webp" alt="${esc(it.name)}">` : ""}
+    <div class="row"><span class="name">${esc(it.name)}</span><span class="price" style="font-size:18px">€ ${esc(it.price)}</span></div>
+    ${it.tag ? `<div class="mini-tag" style="margin:6px 0 0">${esc(it.tag)}</div>` : ""}
+    <p class="desc">${esc(it.desc)}</p>
+    <button class="cta ghost" onclick="closeSheet()">Zurück zur Karte</button></div>`);
+}
+function showUnlock(){
+  openSheet(`<div class="eyebrow" style="margin-top:6px">Summit Collection</div>
+    <h3>Schalte die Geheimkarte frei</h3>
+    <ol class="steps">
+      <li><div><b>Folge @kilimanjaro_graz</b><span>Ein Tap – dauert drei Sekunden.</span></div></li>
+      <li><div><b>Poste eine Story aus der Bar</b><span>Dein Drink, deine Crew, die Tanzfläche – und markiere @kilimanjaro_graz.</span></div></li>
+      <li><div><b>Zeig die Story an der Bar</b><span>Du bekommst den Code der Woche – plus ein Dankeschön aufs Haus: Mystery Sip (2 cl, ab 18) oder Zobo Zero Shot.</span></div></li>
+    </ol>
+    <a class="cta" href="${IG}" target="_blank" rel="noopener">Instagram öffnen</a>
+    <div class="code"><input id="codeIn" placeholder="CODE" autocomplete="off" autocapitalize="characters" aria-label="Code"><button class="cta" id="codeBtn">Freischalten</button></div>
+    <p class="err" id="err"></p>
+    <p class="small">Dankeschön 1× pro Person und Abend; Mystery Sip nur ab 18 mit Ausweis. Den Code gibt es auf Nachfrage auch ohne Story – Teilnahme ohne Kauf möglich. Wir reposten deine Story gern. Diese Aktion wird nicht von Instagram gesponsert, unterstützt oder organisiert; mit der Teilnahme stellst du Instagram von jeglicher Haftung frei.</p>`);
+  const tryCode = async () => {
+    const v = $("#codeIn").value.trim().toUpperCase();
+    if (UNLOCK_HASHES.includes(await sha256(v))){
+      try { localStorage.setItem("kili_unlock", Date.now() + UNLOCK_HOURS * 36e5); } catch {}
+      closeSheet(); render(); bindNav();
+      document.getElementById("summit").scrollIntoView();
+    } else $("#err").textContent = "Der Code stimmt nicht – frag an der Bar nach.";
+  };
+  $("#codeBtn").onclick = tryCode;
+  $("#codeIn").onkeydown = e => { if (e.key === "Enter") tryCode(); };
+}
+
+/* Nav highlight */
+let io;
+function bindNav(){
+  io?.disconnect();
+  const links = [...document.querySelectorAll("nav a")];
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){
+      links.forEach(a => a.classList.toggle("on", a.hash === "#" + e.target.id));
+      document.querySelector("nav a.on")?.scrollIntoView({inline:"center", block:"nearest"});
+    }
+  }), {rootMargin:"-45% 0px -50% 0px"});
+  document.querySelectorAll("main section").forEach(s => io.observe(s));
+}
+
+document.addEventListener("click", e => {
+  const c = e.target.closest(".card"); if (c) return showDetail(c.dataset.id);
+  if (e.target.closest("#openUnlock")) return showUnlock();
+});
+$("#scrim").onclick = closeSheet; $("#close").onclick = closeSheet;
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+render(); bindNav();
+</script>
+</body>
+</html>
