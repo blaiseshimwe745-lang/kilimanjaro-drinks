@@ -303,6 +303,23 @@ document.addEventListener("click", e => {
 $("#scrim").onclick = closeSheet; $("#close").onclick = closeSheet;
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
 render(); bindNav();
+
+/* Direktlinks für Story-Sticker: #signature, #summit, #unlock, #drink-zobo */
+function openFromHash(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (!h) return;
+  const sec = document.getElementById(h === "unlock" ? "summit" : h.startsWith("drink-") ? "" : h);
+  if (h.startsWith("drink-") && ITEMS[h.slice(6)]){
+    const card = document.querySelector(`.card[data-id="${CSS.escape(h.slice(6))}"]`);
+    card?.scrollIntoView({block:"center", behavior:"instant"});
+    showDetail(h.slice(6));
+  } else if (sec){
+    sec.scrollIntoView({behavior:"instant"});
+    if (h === "unlock" && !isUnlocked()) showUnlock();
+  }
+}
+openFromHash();
+addEventListener("hashchange", openFromHash);
 </script>
 </body>
 </html>
